@@ -1,0 +1,16 @@
+.Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Main__marquee {
+  margin-top: -80px;
+  margin-bottom: 16px;
+}
+
+.Main__price {
+  text-align: center;
+}
