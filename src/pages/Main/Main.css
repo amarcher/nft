@@ -13,4 +13,5 @@
 
 .Main__price {
   text-align: center;
+  min-height: 20px;
 }

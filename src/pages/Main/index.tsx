@@ -4,27 +4,29 @@ import usePageTitle from '../../hooks/usePageTitle';
 import Button from '../../components/Button';
 import PreloadedImage from '../../components/PreloadedImage';
 import useCrypto from '../../hooks/useCrypto';
+import { RouteComponentProps } from 'react-router-dom';
+import { getPhotoSrc, getPrice } from '../../constants/content';
 
 import './Main.css';
 
-const USD = 0.84;
+type Props = RouteComponentProps<{ id?: string }>;
 
-export default function Main() {
+export default function Main({ match }: Props) {
+  const { id } = match.params;
+
   const [price, setPrice] = useState(0);
   usePageTitle();
-  useCrypto(USD, setPrice, true);
+  useCrypto(getPrice(id), setPrice, true);
+
+  const priceString = price ? `${price} ETH` : ` `;
 
   return (
     <div className="Main">
       <div className="Main__marquee">
-        <PreloadedImage
-          height={300}
-          width={300}
-          src="https://mcdonaldpaper.com/media/catalog/product/cache/757ea7d2b7282843694bdb6de7a23598/b/w/bwk6145.jpg"
-        />
+        <PreloadedImage height={300} width={300} src={getPhotoSrc(id)} />
       </div>
-      <Button className="Main__price" onPress={() => console.log(`$${USD}`)}>
-        {price} ETH
+      <Button className="Main__price" onPress={() => alert(`$${getPrice(id)}`)}>
+        {priceString}
       </Button>
     </div>
   );

@@ -3,4 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+}
+
+.Things__grid {
+  height: 250px;
+  display: grid;
+  grid-template-columns: repeat(5, [col-start] 1fr);
+  grid-template-rows: repeat(5, [row-start] 1fr);
 }

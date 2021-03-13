@@ -4,7 +4,7 @@
 }
 
 .preloaded-image__cover {
-  background-color: #e0e0e0;
+  background-color: #ffffff;
   transition: opacity 300ms ease-in-out;
   position: absolute;
   opacity: 0;

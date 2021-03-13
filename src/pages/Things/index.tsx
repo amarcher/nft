@@ -1,9 +1,9 @@
 import React from 'react';
 
 import usePageTitle from '../../hooks/usePageTitle';
+import { photos } from '../../constants/content';
 import Button from '../../components/Button';
 import PreloadedImage from '../../components/PreloadedImage';
-import logo from '../../images/logo.png';
 
 import './Things.css';
 
@@ -12,10 +12,13 @@ export default function Things() {
 
   return (
     <div className="Things">
-      <div className="Things">
-        <PreloadedImage height={300} width={300} src={logo} />
+      <div className="Things__grid">
+        {photos.map((photo, index) => (
+          <Button href={`/thing/${index}`}>
+            <PreloadedImage height={50} width={50} src={photo} />
+          </Button>
+        ))}
       </div>
-      <Button onPress={() => console.log('pressed')}>Bid</Button>
     </div>
   );
 }
