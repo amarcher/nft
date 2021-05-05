@@ -1,0 +1,33 @@
+.SharedElement {
+  position: fixed;
+  contain: strict;
+}
+
+.GhostLayer {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  opacity: 1;
+  z-index: 2;
+}
+
+.GhostLayer__mask {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 200ms;
+  z-index: 1;
+}
+
+.GhostLayer__mask__transitioning {
+  opacity: 1;
+}

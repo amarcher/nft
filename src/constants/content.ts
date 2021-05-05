@@ -1,8 +1,9 @@
 import toiletPaper from '../images/toiletPaper.png';
 import banana from '../images/banana.png';
+import ductTape from '../images/ductTape.png';
 
-export const photos = [toiletPaper, banana];
-const prices = [0.84, 0.39];
+export const photos = [toiletPaper, banana, ductTape];
+const prices = [0.84, 0.39, 4.99];
 
 export function getPhotoSrc(id?: string): string {
   if (typeof id === 'undefined') {

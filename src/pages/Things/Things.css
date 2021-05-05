@@ -4,10 +4,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  transition: opacity 200ms;
 }
 
 .Things__grid {
   height: 250px;
+  grid-gap: 4px;
   display: grid;
   grid-template-columns: repeat(5, [col-start] 1fr);
   grid-template-rows: repeat(5, [row-start] 1fr);

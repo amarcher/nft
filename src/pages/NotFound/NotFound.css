@@ -1,6 +1,6 @@
-.NotFound__hero {
+.NotFound {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px 0;
+  margin: 80px 0 10px;
 }

@@ -1,33 +1,36 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 import usePageTitle from '../../hooks/usePageTitle';
-import Button from '../../components/Button';
 import PreloadedImage from '../../components/PreloadedImage';
-import useCrypto from '../../hooks/useCrypto';
 import { RouteComponentProps } from 'react-router-dom';
+import SharedElement from '../../components/SharedElement';
+import { SharedElementContext } from '../../components/SharedElementContextProvider';
+import Price from '../../components/Price';
 import { getPhotoSrc, getPrice } from '../../constants/content';
 
 import './Main.css';
 
 type Props = RouteComponentProps<{ id?: string }>;
 
-export default function Main({ match }: Props) {
+export default function Main({ match, location: { key } }: Props) {
   const { id } = match.params;
+  const { isTransitioning, activeRouteKey } = useContext(SharedElementContext);
 
-  const [price, setPrice] = useState(0);
   usePageTitle();
-  useCrypto(getPrice(id), setPrice, true);
-
-  const priceString = price ? `${price} ETH` : ` `;
 
   return (
-    <div className="Main">
+    <div
+      className="Main"
+      style={{
+        opacity: isTransitioning || activeRouteKey !== key ? 0 : 1,
+      }}
+    >
       <div className="Main__marquee">
-        <PreloadedImage height={300} width={300} src={getPhotoSrc(id)} />
+        <SharedElement id={`/thing/${id}`} routeKey={key}>
+          <PreloadedImage height={300} width={300} src={getPhotoSrc(id)} />
+        </SharedElement>
       </div>
-      <Button className="Main__price" onPress={() => alert(`$${getPrice(id)}`)}>
-        {priceString}
-      </Button>
+      <Price usd={getPrice(id)} />
     </div>
   );
 }

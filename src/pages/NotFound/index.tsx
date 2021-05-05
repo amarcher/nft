@@ -9,8 +9,8 @@ export default function NotFound() {
   usePageTitle('Not Found');
 
   return (
-    <>
+    <div className="NotFound">
       <Title>404: That's an error</Title>
-    </>
+    </div>
   );
 }
