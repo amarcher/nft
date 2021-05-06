@@ -7,6 +7,16 @@
   transition: opacity 200ms;
 }
 
+.Things__transitioning {
+  opacity: 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.Things__transitioning::-webkit-scrollbar {
+  display: none;
+}
+
 .Things__grid {
   height: 250px;
   grid-gap: 4px;

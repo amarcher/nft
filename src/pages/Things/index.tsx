@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { RouteComponentProps } from 'react-router';
+import classNames from 'classnames';
 
 import usePageTitle from '../../hooks/usePageTitle';
 import { photos } from '../../constants/content';
@@ -26,10 +27,9 @@ export default function Things({
 
   return (
     <div
-      className="Things"
-      style={{
-        opacity: isTransitioning || activeRouteKey !== key ? 0 : 1,
-      }}
+      className={classNames('Things', {
+        Things__transitioning: isTransitioning || activeRouteKey !== key,
+      })}
     >
       <div className="Things__grid">
         {pad(photos, '', 50).map((photo, index) => {

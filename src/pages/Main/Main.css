@@ -7,6 +7,16 @@
   transition: opacity 200ms;
 }
 
+.Main__transitioning {
+  opacity: 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.Main__transitioning::-webkit-scrollbar {
+  display: none;
+}
+
 .Main__marquee {
   margin-top: -80px;
   margin-bottom: 16px;
