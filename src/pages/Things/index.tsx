@@ -19,23 +19,23 @@ type Props = RouteComponentProps;
 
 export default function Things({
   history: {
-    location: { key },
+    location: { pathname },
   },
 }: Props) {
   usePageTitle('Things');
-  const { isTransitioning, activeRouteKey } = useContext(SharedElementContext);
+  const { isTransitioning, activePathname } = useContext(SharedElementContext);
 
   return (
     <div
       className={classNames('Things', {
-        Things__transitioning: isTransitioning || activeRouteKey !== key,
+        Things__transitioning: isTransitioning || activePathname !== pathname,
       })}
     >
       <div className="Things__grid">
         {pad(photos, '', 50).map((photo, index) => {
           const url = `/thing/${index}`;
           return (
-            <SharedElement id={url} key={url} routeKey={key}>
+            <SharedElement id={url} key={url} pathname={pathname}>
               <Button href={url}>
                 <PreloadedImage height={50} width={50} src={photo} />
               </Button>

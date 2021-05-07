@@ -17,20 +17,20 @@ import './Main.css';
 
 type Props = RouteComponentProps<{ id?: string }>;
 
-export default function Main({ match, location: { key } }: Props) {
+export default function Main({ match, location: { pathname } }: Props) {
   const { id = String(getLatestPhotoId()) } = match.params;
-  const { isTransitioning, activeRouteKey } = useContext(SharedElementContext);
+  const { isTransitioning, activePathname } = useContext(SharedElementContext);
 
   usePageTitle();
 
   return (
     <div
       className={classNames('Main', {
-        Main__transitioning: isTransitioning || activeRouteKey !== key,
+        Main__transitioning: isTransitioning || activePathname !== pathname,
       })}
     >
       <div className="Main__marquee">
-        <SharedElement id={`/thing/${id}`} routeKey={key}>
+        <SharedElement id={`/thing/${id}`} pathname={pathname}>
           <PreloadedImage height={300} width={300} src={getPhotoSrc(id)} />
         </SharedElement>
       </div>

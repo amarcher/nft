@@ -11,7 +11,7 @@ function Routes() {
   return (
     <SharedElementContextProvider>
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" component={Things} />
         <Route path="/things" component={Things} />
         <Route path="/thing/:id" component={Main} />
         <Route path="*" component={NotFound} />

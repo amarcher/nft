@@ -1,9 +1,10 @@
 import toiletPaper from '../images/toiletPaper.png';
 import banana from '../images/banana.png';
 import ductTape from '../images/ductTape.png';
+import iceCream from '../images/iceCream.png';
 
-export const photos = [toiletPaper, banana, ductTape];
-const prices = [0.84, 0.39, 4.99];
+export const photos = [toiletPaper, banana, ductTape, iceCream];
+const prices = [0.84, 0.39, 4.99, 3.5];
 
 export function getLatestPhotoId(): number {
   return 0;

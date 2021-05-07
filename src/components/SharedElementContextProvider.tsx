@@ -22,9 +22,9 @@ export interface SharedElementToTransition extends SharedElement {
 export type SharedElementContextType = {
   mountSharedElement: (
     sharedElement: SharedElementToTransition,
-    routeKey?: string
+    pathname?: string
   ) => void;
-  activeRouteKey?: string;
+  activePathname?: string;
   isTransitioning: boolean;
 };
 
@@ -32,7 +32,7 @@ export const SharedElementContext = React.createContext<SharedElementContextType
   {
     mountSharedElement() {},
     isTransitioning: false,
-    activeRouteKey: undefined,
+    activePathname: undefined,
   }
 );
 
@@ -48,10 +48,10 @@ function isSharedElementToTransition(
 }
 
 export default function ShareElementContextProvider({ children }: Props) {
-  const { key: routeKey } = useLocation();
+  const { pathname } = useLocation();
   const ghostLayerRef = useRef<HTMLDivElement>(null);
-  const prevRouteKey = useRef<string | undefined>(routeKey);
-  const activeRouteKey = useRef<string | undefined>(routeKey);
+  const prevPathname = useRef<string | undefined>(pathname);
+  const activePathname = useRef<string | undefined>(pathname);
 
   const [sharedElements, setSharedElements] = useState<
     Record<string, SharedElement>
@@ -164,6 +164,8 @@ export default function ShareElementContextProvider({ children }: Props) {
       console.log(
         `starting transition of ${sharedElementsToTransition.length} element(s)`
       );
+
+      setIsTransitioning(true);
       return Promise.all(sharedElementsToTransition.map(transition)).finally(
         endTransition
       );
@@ -174,8 +176,8 @@ export default function ShareElementContextProvider({ children }: Props) {
   }, [endTransition, sharedElements, transition]);
 
   /*
-   * The routeKey has changed but we don't yet know whether the new route has shared elements.
-   * 0. Store the new route key as activeRouteKey and use the mismatch with prevRouteKey to:
+   * The pathname has changed but we don't yet know whether the new route has shared elements.
+   * 0. Store the new pathname as activePathname and use the mismatch with prevPathname to:
    *       (A) Prevent the new route from rendering
    *       (B) Mount the shared element as its updated
    * 1. Let the new route render its shared elements and call mountSharedElement
@@ -183,28 +185,34 @@ export default function ShareElementContextProvider({ children }: Props) {
    * Expect to transition after the next setState stack has resolved.
    */
   useEffect(() => {
-    if (activeRouteKey.current && routeKey !== activeRouteKey.current) {
-      activeRouteKey.current = routeKey;
+    if (activePathname.current && pathname !== activePathname.current) {
+      activePathname.current = pathname;
     }
-  }, [routeKey]);
+  }, [pathname]);
 
   /*
    * Transition now that the setState stack is clear
    */
   useEffect(() => {
-    if (!isTransitioning && activeRouteKey.current !== prevRouteKey.current) {
+    console.log({
+      pathname,
+      isTransitioning,
+      activePathname: activePathname.current,
+      prevPathname: prevPathname.current,
+    });
+    if (!isTransitioning && activePathname.current !== prevPathname.current) {
       maybeTransition().then(() => {
-        prevRouteKey.current = routeKey;
+        prevPathname.current = pathname;
       });
     }
-  }, [routeKey, isTransitioning, maybeTransition]);
+  }, [pathname, isTransitioning, maybeTransition]);
 
   const mountSharedElement = useCallback(
-    (sharedElement, routeKeyOfSharedElement) => {
+    (sharedElement, pathnameOfSharedElement) => {
       if (!sharedElements[sharedElement.id]) {
         console.log('adding element');
         addOrUpdateSharedElement(sharedElement);
-      } else if (routeKeyOfSharedElement !== prevRouteKey.current) {
+      } else if (pathnameOfSharedElement !== prevPathname.current) {
         console.log('updating element');
         addOrUpdateSharedElement(sharedElement);
       }
@@ -217,7 +225,7 @@ export default function ShareElementContextProvider({ children }: Props) {
       value={{
         mountSharedElement,
         isTransitioning,
-        activeRouteKey: prevRouteKey.current,
+        activePathname: prevPathname.current,
       }}
     >
       <>
@@ -225,9 +233,9 @@ export default function ShareElementContextProvider({ children }: Props) {
         <div
           className={classNames('GhostLayer__mask', {
             GhostLayer__mask__transitioning:
-              prevRouteKey.current !== routeKey ||
-              activeRouteKey.current !== routeKey ||
-              prevRouteKey.current !== activeRouteKey.current ||
+              prevPathname.current !== pathname ||
+              activePathname.current !== pathname ||
+              prevPathname.current !== activePathname.current ||
               isTransitioning,
           })}
         />
