@@ -1,6 +1,8 @@
 .SharedElement {
   position: fixed;
   contain: strict;
+  will-change: transform;
+  animation-fill-mode: both;
 }
 
 .GhostLayer {
@@ -24,7 +26,6 @@
   bottom: 0;
   background-color: white;
   opacity: 0;
-  transition: opacity 200ms;
   z-index: 1;
 }
 

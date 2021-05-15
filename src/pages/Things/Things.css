@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  transition: opacity 200ms;
+  will-change: opacity;
 }
 
 .Things__transitioning {
+  transition: opacity 200ms;
   opacity: 0;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

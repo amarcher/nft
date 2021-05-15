@@ -19,9 +19,7 @@ export default function SharedElement({ children, id, pathname }: Props) {
     if (!node) return;
 
     const sharedElement = {
-      node,
-      firstBoundingClientRect: node.getBoundingClientRect(),
-      lastBoundingClientRect: node.getBoundingClientRect(),
+      ref: node,
       id,
     };
 

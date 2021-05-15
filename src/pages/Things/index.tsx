@@ -34,12 +34,15 @@ export default function Things({
       <div className="Things__grid">
         {pad(photos, '', 50).map((photo, index) => {
           const url = `/thing/${index}`;
-          return (
+          console.log(photo);
+          return photo ? (
             <SharedElement id={url} key={url} pathname={pathname}>
               <Button href={url}>
                 <PreloadedImage height={50} width={50} src={photo} />
               </Button>
             </SharedElement>
+          ) : (
+            <div key={url} />
           );
         })}
       </div>
