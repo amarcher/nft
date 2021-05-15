@@ -1,4 +1,5 @@
 import React from 'react';
+import 'web-animations-js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import SharedElementContextProvider from './components/SharedElementContextProvider';
