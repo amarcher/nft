@@ -7,9 +7,12 @@ import { RouteComponentProps } from 'react-router-dom';
 import SharedElement from '../../components/SharedElement';
 import { SharedElementContext } from '../../components/SharedElementContextProvider';
 import Price from '../../components/Price';
+import NFT from '../../components/NFT';
 import {
   getPhotoSrc,
   getPrice,
+  getName,
+  getNftData,
   getLatestPhotoId,
 } from '../../constants/content';
 
@@ -22,7 +25,7 @@ export default function Main({ match, location: { pathname } }: Props) {
   const { id = String(getLatestPhotoId()) } = match.params;
   const { isTransitioning, activePathname } = useContext(SharedElementContext);
 
-  usePageTitle();
+  usePageTitle(getName(id));
 
   if (!getPhotoSrc(id)) {
     return <NotFound />;
@@ -39,7 +42,8 @@ export default function Main({ match, location: { pathname } }: Props) {
           <PreloadedImage height={300} width={300} src={getPhotoSrc(id)} />
         </SharedElement>
       </div>
-      <Price usd={getPrice(id)} />
+      <Price usd={getPrice(id)} name={getName(id)} />
+      <NFT {...getNftData(id)} name={getName(id)} />
     </div>
   );
 }

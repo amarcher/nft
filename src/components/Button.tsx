@@ -31,8 +31,12 @@ export default function Button({
         e.stopPropagation();
       }
 
-      if (href) {
+      if (href && !href.startsWith('https:')) {
         history.push(href);
+      }
+
+      if (href && href.startsWith('https:')) {
+        window.location.href = href;
       }
 
       if (onPress) onPress();

@@ -23,6 +23,7 @@ export default function Things({
   },
 }: Props) {
   usePageTitle('Things');
+
   const { isTransitioning, activePathname } = useContext(SharedElementContext);
 
   return (
@@ -34,7 +35,6 @@ export default function Things({
       <div className="Things__grid">
         {pad(photos, '', 50).map((photo, index) => {
           const url = `/thing/${index}`;
-          console.log(photo);
           return photo ? (
             <SharedElement id={url} key={url} pathname={pathname}>
               <Button href={url}>

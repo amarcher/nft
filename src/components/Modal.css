@@ -1,6 +1,5 @@
 .Modal__header {
   min-height: 20px;
-  border-bottom: 1px solid black;
   margin: -20px -20px 10px;
   padding: 10px 40px;
   font-weight: bold;
@@ -23,6 +22,6 @@
 }
 
 .ReactModal__Overlay--after-open {
-  z-index: 10;
+  z-index: 11;
   background-color: rgba(114, 114, 114, 0.95) !important;
 }

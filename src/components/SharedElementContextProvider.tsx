@@ -194,8 +194,8 @@ export default function ShareElementContextProvider({ children }: Props) {
    *       (A) Prevent the new route from rendering
    *       (B) Mount the shared element as its updated
    * 1. Let the new route render its shared elements and call mountSharedElement
-   * Mount the shared element then make the ghost layer mask opaque.
-   * Expect to transition after the next setState stack has resolved.
+   * 2. Mount the shared element then make the ghost layer mask opaque.
+   * 3. Expect to transition after the next setState stack has resolved.
    */
   useEffect(() => {
     if (activePathname.current && pathname !== activePathname.current) {

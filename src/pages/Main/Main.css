@@ -5,10 +5,11 @@
   justify-content: center;
   height: 100vh;
   will-change: opacity;
+  opacity: 1;
+  transition: opacity 200ms;
 }
 
 .Main__transitioning {
-  transition: opacity 200ms;
   opacity: 0;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -25,5 +26,14 @@
 
 .Main__price {
   text-align: center;
-  min-height: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.Main__NFT {
+  text-align: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
