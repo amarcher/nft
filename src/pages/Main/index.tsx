@@ -14,6 +14,7 @@ import {
 } from '../../constants/content';
 
 import './Main.css';
+import NotFound from '../NotFound';
 
 type Props = RouteComponentProps<{ id?: string }>;
 
@@ -22,6 +23,10 @@ export default function Main({ match, location: { pathname } }: Props) {
   const { isTransitioning, activePathname } = useContext(SharedElementContext);
 
   usePageTitle();
+
+  if (!getPhotoSrc(id)) {
+    return <NotFound />;
+  }
 
   return (
     <div
