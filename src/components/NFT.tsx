@@ -28,7 +28,11 @@ export default function NFT({ contractAddress, tokenId, name }: Props) {
 
   return (
     <>
-      <Button className="Main__NFT" onPress={() => setIsModalOpen(true)}>
+      <Button
+        className="Main__NFT"
+        onPress={salePrice ? undefined : () => setIsModalOpen(true)}
+        href={salePrice ? asset.permalink : undefined}
+      >
         {priceString}
       </Button>
       <Modal

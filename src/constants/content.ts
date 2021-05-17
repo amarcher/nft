@@ -3,6 +3,10 @@ import banana from '../images/banana.png';
 import ductTape from '../images/ductTape.png';
 import iceCream from '../images/iceCream.png';
 import strawberry from '../images/strawberry.png';
+import scotchTape from '../images/scotchTape.png';
+import sponge from '../images/sponge.png';
+import bowlingBall from '../images/bowlingBall.png';
+import candle from '../images/candle.png';
 
 export interface NFTData {
   contractAddress: string;
@@ -11,21 +15,39 @@ export interface NFTData {
 
 const CONTRACT_ADDRESS = '0x495f947276749ce646f68ac8c248420045cb7b5e';
 
-export const photos = [toiletPaper, banana, ductTape, iceCream, strawberry];
+export const photos = [
+  toiletPaper,
+  banana,
+  ductTape,
+  iceCream,
+  strawberry,
+  scotchTape,
+  sponge,
+  bowlingBall,
+  candle,
+];
 export const names = [
   'Toilet Paper',
   'Banana',
   'Duct Tape',
   'Ice Cream',
   'Strawberry',
+  'Scotch Tape',
+  'Sponge',
+  'Bowling Ball',
+  'Candle',
 ];
-const prices = [0.84, 0.39, 4.99, 3.5, 0.25];
+const prices = [0.84, 0.39, 4.99, 3.5, 0.25, 2.79, 0.93, 144.95, 7.8];
 const tokens = [
   '115520923340809203113026120233829107469855999749882535239359978683612329410561',
   '115520923340809203113026120233829107469855999749882535239359978684711841038337',
   '115520923340809203113026120233829107469855999749882535239359978685811352666113',
   '115520923340809203113026120233829107469855999749882535239359978686910864293889',
   '115520923340809203113026120233829107469855999749882535239359978688010375921665',
+  '115520923340809203113026120233829107469855999749882535239359978689109887549441',
+  '115520923340809203113026120233829107469855999749882535239359978690209399177217',
+  '115520923340809203113026120233829107469855999749882535239359978691308910804993',
+  '115520923340809203113026120233829107469855999749882535239359978692408422432769',
 ];
 
 export function getLatestPhotoId(): number {
