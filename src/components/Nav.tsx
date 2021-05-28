@@ -29,6 +29,7 @@ export default function Nav() {
           </li>
         </ul>
       </nav>
+      <div>Why buy IRL, when the NFT is worth so much more?</div>
       <div className="nav__spacer" />
     </div>
   );
