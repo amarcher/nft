@@ -1,6 +1,6 @@
 import React from 'react';
 import 'web-animations-js';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, StaticRouter, Route, Switch } from 'react-router-dom';
 
 import SharedElementContextProvider from './components/SharedElementContextProvider';
 import Nav from './components/Nav';
@@ -21,13 +21,24 @@ function Routes() {
   );
 }
 
-export default function App() {
+export default function App({ location }: { location?: string }) {
+  if (typeof window === 'undefined') {
+    return (
+      <StaticRouter location={location}>
+        <Nav />
+        <main>
+          <Routes />
+        </main>
+      </StaticRouter>
+    );
+  }
+
   return (
-    <Router>
+    <BrowserRouter>
       <Nav />
       <main>
         <Routes />
       </main>
-    </Router>
+    </BrowserRouter>
   );
 }

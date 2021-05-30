@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 
 export default function useScrollDetection(threshold: number = 0) {
-  const prevScrollY = useRef(window.scrollY);
+  const prevScrollY = useRef(typeof window !== 'undefined' && window.scrollY);
 
   const [isGoingUp, setIsGoingUp] = useState(false);
   const [isAboveThreshold, setIsAboveThreshold] = useState(
@@ -9,7 +9,7 @@ export default function useScrollDetection(threshold: number = 0) {
   );
 
   const handleScroll = useCallback(() => {
-    const currentScrollY = window.scrollY;
+    const currentScrollY = typeof window !== 'undefined' && window.scrollY;
 
     setIsGoingUp((prevIsGoingUp) => {
       if (prevScrollY.current < currentScrollY && prevIsGoingUp) {
@@ -39,9 +39,11 @@ export default function useScrollDetection(threshold: number = 0) {
   }, [threshold]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => window.removeEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, [isGoingUp, handleScroll]);
 
   return { isGoingUp, isAboveThreshold };
