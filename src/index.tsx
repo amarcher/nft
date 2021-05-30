@@ -7,6 +7,6 @@ import App from './App';
 
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById(ROOT_ELEMENT));
+ReactDOM.hydrate(<App />, document.getElementById(ROOT_ELEMENT));
 
 reportWebVitals();

@@ -1,6 +1,5 @@
-import React from 'react';
-import 'web-animations-js';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, StaticRouter, Route, Switch } from 'react-router-dom';
 
 import SharedElementContextProvider from './components/SharedElementContextProvider';
 import Nav from './components/Nav';
@@ -9,6 +8,10 @@ import Things from './pages/Things';
 import NotFound from './pages/NotFound';
 
 function Routes() {
+  useEffect(() => {
+    require('web-animations-js');
+  }, []);
+
   return (
     <SharedElementContextProvider>
       <Switch>
@@ -21,13 +24,24 @@ function Routes() {
   );
 }
 
-export default function App() {
+export default function App({ location }: { location?: string }) {
+  if (typeof window === 'undefined') {
+    return (
+      <StaticRouter location={location}>
+        <Nav />
+        <main>
+          <Routes />
+        </main>
+      </StaticRouter>
+    );
+  }
+
   return (
-    <Router>
+    <BrowserRouter>
       <Nav />
       <main>
         <Routes />
       </main>
-    </Router>
+    </BrowserRouter>
   );
 }
