@@ -1,5 +1,4 @@
-import React from 'react';
-import 'web-animations-js';
+import React, { useEffect } from 'react';
 import { BrowserRouter, StaticRouter, Route, Switch } from 'react-router-dom';
 
 import SharedElementContextProvider from './components/SharedElementContextProvider';
@@ -9,6 +8,10 @@ import Things from './pages/Things';
 import NotFound from './pages/NotFound';
 
 function Routes() {
+  useEffect(() => {
+    require('web-animations-js');
+  }, []);
+
   return (
     <SharedElementContextProvider>
       <Switch>
