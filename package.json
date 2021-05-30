@@ -57,7 +57,7 @@
     "url": "https://github.com/amarcher/nft/issues"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

@@ -42,10 +42,13 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '../build')));
-
 app.get('/*', (req, res, next) => {
   console.log(`Request URL = ${req.url}`);
+
+  // TODO: Reference defined client routes
+  if (req.url && req.url !== '/' && !req.url.startsWith('/thing')) {
+    return next();
+  }
 
   const reactApp = ReactDOMServer.renderToString(
     React.createElement(App, { location: { pathname: req.url } })
@@ -67,6 +70,8 @@ app.get('/*', (req, res, next) => {
     );
   });
 });
+
+app.use(express.static(path.join(__dirname, '../build')));
 
 app.listen(PORT, () =>
   console.log(`Express server is running on PORT: ${PORT}`)
