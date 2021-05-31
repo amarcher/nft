@@ -43,8 +43,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/*', (req, res, next) => {
-  console.log(`Request URL = ${req.url}`);
-
   // TODO: Reference defined client routes
   if (req.url && req.url !== '/' && !req.url.startsWith('/thing')) {
     return next();
@@ -53,8 +51,6 @@ app.get('/*', (req, res, next) => {
   const reactApp = ReactDOMServer.renderToString(
     React.createElement(App, { location: { pathname: req.url } })
   );
-
-  console.log(reactApp);
 
   const indexFile = path.resolve('build/index.html');
 

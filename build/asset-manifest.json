@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.21ae7ca7.chunk.css",
-    "main.js": "/static/js/main.d7e1b311.chunk.js",
-    "main.js.map": "/static/js/main.d7e1b311.chunk.js.map",
+    "main.js": "/static/js/main.5bc64916.chunk.js",
+    "main.js.map": "/static/js/main.5bc64916.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.dc59ea8e.js",
     "runtime-main.js.map": "/static/js/runtime-main.dc59ea8e.js.map",
     "static/js/2.4e65a630.chunk.js": "/static/js/2.4e65a630.chunk.js",
@@ -14,6 +14,7 @@
     "static/js/2.4e65a630.chunk.js.LICENSE.txt": "/static/js/2.4e65a630.chunk.js.LICENSE.txt",
     "static/media/banana.3c5e04c4.png": "/static/media/banana.3c5e04c4.png",
     "static/media/bowlingBall.ed590812.png": "/static/media/bowlingBall.ed590812.png",
+    "static/media/brusselsSprouts.ebdde723.png": "/static/media/brusselsSprouts.ebdde723.png",
     "static/media/candle.d6a9bd27.png": "/static/media/candle.d6a9bd27.png",
     "static/media/ductTape.e1be0eeb.png": "/static/media/ductTape.e1be0eeb.png",
     "static/media/iceCream.d06ec4d9.png": "/static/media/iceCream.d06ec4d9.png",
@@ -27,6 +28,6 @@
     "static/js/runtime-main.dc59ea8e.js",
     "static/js/2.4e65a630.chunk.js",
     "static/css/main.21ae7ca7.chunk.css",
-    "static/js/main.d7e1b311.chunk.js"
+    "static/js/main.5bc64916.chunk.js"
   ]
 }

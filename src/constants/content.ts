@@ -7,6 +7,7 @@ import scotchTape from '../images/scotchTape.png';
 import sponge from '../images/sponge.png';
 import bowlingBall from '../images/bowlingBall.png';
 import candle from '../images/candle.png';
+import brusselsSprouts from '../images/brusselsSprouts.png';
 
 export interface NFTData {
   contractAddress: string;
@@ -25,6 +26,7 @@ export const photos = [
   sponge,
   bowlingBall,
   candle,
+  brusselsSprouts,
 ];
 export const names = [
   'Toilet Paper',
@@ -36,8 +38,9 @@ export const names = [
   'Sponge',
   'Bowling Ball',
   'Candle',
+  'Brussels Sprouts',
 ];
-const prices = [0.84, 0.39, 4.99, 3.5, 0.25, 2.79, 0.93, 144.95, 7.8];
+const prices = [0.84, 0.39, 4.99, 3.5, 0.25, 2.79, 0.93, 144.95, 7.8, 3.99];
 const tokens = [
   '115520923340809203113026120233829107469855999749882535239359978683612329410561',
   '115520923340809203113026120233829107469855999749882535239359978684711841038337',
@@ -48,6 +51,7 @@ const tokens = [
   '115520923340809203113026120233829107469855999749882535239359978690209399177217',
   '115520923340809203113026120233829107469855999749882535239359978691308910804993',
   '115520923340809203113026120233829107469855999749882535239359978692408422432769',
+  '115520923340809203113026120233829107469855999749882535239359978693507934060545',
 ];
 
 export function getLatestPhotoId(): number {

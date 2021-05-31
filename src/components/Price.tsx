@@ -14,7 +14,7 @@ export default function Price({ usd, name }: Props) {
   const [eth, setEth] = useState(0);
   useCrypto(usd, setEth, true);
 
-  const priceString = eth ? `IRL: ${eth} ETH` : ` `;
+  const priceString = eth ? `IRL: ${eth.toFixed(8)} ETH` : ` `;
   const title = `Real Life Cost of ${name}`;
 
   return (
