@@ -70,5 +70,5 @@ app.get('/*', (req, res, next) => {
 app.use(express.static(path.join(__dirname, '../build')));
 
 app.listen(PORT, () =>
-  console.log(`Express server is running on PORT: ${PORT}`)
+  console.log(`Express server is running on localhost:${PORT}`)
 );
