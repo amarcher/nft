@@ -9,6 +9,7 @@ import bowlingBall from '../images/bowlingBall.png';
 import candle from '../images/candle.png';
 import brusselsSprouts from '../images/brusselsSprouts.png';
 import asparagus from '../images/asparagus.png';
+import eggs from '../images/eggs.png';
 
 export interface NFTData {
   contractAddress: string;
@@ -94,6 +95,13 @@ const things = [
     price: 5.99,
     token:
       '115520923340809203113026120233829107469855999749882535239359978694607445688321',
+  },
+  {
+    picture: eggs,
+    name: 'Eggs',
+    price: 1.48,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978695706957316097',
   },
 ];
 
