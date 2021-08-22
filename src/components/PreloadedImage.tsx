@@ -3,7 +3,7 @@ import React, {
   useRef,
   useCallback,
   useMemo,
-  useEffect,
+  useLayoutEffect,
 } from 'react';
 import classNames from 'classnames';
 
@@ -53,7 +53,7 @@ export default function PreloadedImage({
 
   preloader.current.onload = onLoad;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const { current } = preloader;
     if (src) {
       current.src = src;
