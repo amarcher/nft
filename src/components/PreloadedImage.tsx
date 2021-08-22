@@ -39,7 +39,9 @@ export default function PreloadedImage({
   const preloader = useRef(new Image());
   preloader.current.referrerPolicy = 'no-referrer';
   preloader.current.src = src;
-  const [loaded, setLoaded] = useState(preloader.current.complete);
+  const [loaded, setLoaded] = useState(
+    typeof window !== 'undefined' && preloader.current.complete
+  );
 
   const onLoad = useCallback(() => {
     setLoaded(true);
