@@ -3,8 +3,9 @@ import React, {
   useRef,
   useCallback,
   useMemo,
-  useLayoutEffect,
+  useEffect,
 } from 'react';
+import useIsMounted from '../hooks/useIsMounted';
 import classNames from 'classnames';
 
 import './PreloadedImage.css';
@@ -36,12 +37,11 @@ export default function PreloadedImage({
   useImg = false,
   width = '',
 }: Props) {
+  const isMounted = useIsMounted();
   const preloader = useRef(new Image());
   preloader.current.referrerPolicy = 'no-referrer';
   preloader.current.src = src;
-  const [loaded, setLoaded] = useState(
-    typeof window !== 'undefined' && preloader.current.complete
-  );
+  const [loaded, setLoaded] = useState(preloader.current.complete);
 
   const onLoad = useCallback(() => {
     setLoaded(true);
@@ -53,9 +53,9 @@ export default function PreloadedImage({
 
   preloader.current.onload = onLoad;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const { current } = preloader;
-    if (src) {
+    if (src !== current.src) {
       current.src = src;
       setLoaded(current.complete);
     }
@@ -95,7 +95,7 @@ export default function PreloadedImage({
   );
 
   const containerClass = classNames('preloaded-image__container', {
-    'preloaded-image__preloading': !loaded,
+    'preloaded-image__preloading': !isMounted || !loaded,
     [className]: !!className,
   });
 
