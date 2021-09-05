@@ -50,8 +50,10 @@
   color: inherit;
 }
 
-.nav__list-item > *:hover {
-  transform: scale(1.1);
+@media (hover: hover) {
+  .nav__list-item > *:hover {
+    transform: scale(1.1);
+  }
 }
 
 .nav__list-item .active {
