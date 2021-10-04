@@ -10,6 +10,10 @@ import candle from '../images/candle.png';
 import brusselsSprouts from '../images/brusselsSprouts.png';
 import asparagus from '../images/asparagus.png';
 import eggs from '../images/eggs.png';
+import pacifier from '../images/pacifier.png';
+import garlic from '../images/garlic.png';
+import shallot from '../images/shallot.png';
+import yellowOnion from '../images/yellowOnion.png';
 
 export interface NFTData {
   contractAddress: string;
@@ -102,6 +106,30 @@ const things = [
     price: 1.48,
     token:
       '115520923340809203113026120233829107469855999749882535239359978695706957316097',
+  },
+  {
+    picture: pacifier,
+    name: 'Pacifier',
+    price: 2.5,
+    token: '',
+  },
+  {
+    picture: garlic,
+    name: 'Garlic',
+    price: 0.5,
+    token: '',
+  },
+  {
+    picture: shallot,
+    name: 'Shallot',
+    price: 0.75,
+    token: '',
+  },
+  {
+    picture: yellowOnion,
+    name: 'Yellow Onion',
+    price: 1.49,
+    token: '',
   },
 ];
 

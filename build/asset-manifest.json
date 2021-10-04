@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.04cffc08.chunk.css",
-    "main.js": "/static/js/main.76217dd2.chunk.js",
-    "main.js.map": "/static/js/main.76217dd2.chunk.js.map",
+    "main.js": "/static/js/main.f5e51b26.chunk.js",
+    "main.js.map": "/static/js/main.f5e51b26.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.dc59ea8e.js",
     "runtime-main.js.map": "/static/js/runtime-main.dc59ea8e.js.map",
     "static/js/2.4e65a630.chunk.js": "/static/js/2.4e65a630.chunk.js",
@@ -19,17 +19,21 @@
     "static/media/candle.d6a9bd27.png": "/static/media/candle.d6a9bd27.png",
     "static/media/ductTape.e1be0eeb.png": "/static/media/ductTape.e1be0eeb.png",
     "static/media/eggs.344c6d60.png": "/static/media/eggs.344c6d60.png",
+    "static/media/garlic.c56ad151.png": "/static/media/garlic.c56ad151.png",
     "static/media/iceCream.d06ec4d9.png": "/static/media/iceCream.d06ec4d9.png",
     "static/media/logo.478f188f.png": "/static/media/logo.478f188f.png",
+    "static/media/pacifier.fa5f1230.png": "/static/media/pacifier.fa5f1230.png",
     "static/media/scotchTape.f927a7f3.png": "/static/media/scotchTape.f927a7f3.png",
+    "static/media/shallot.9ed7eeac.png": "/static/media/shallot.9ed7eeac.png",
     "static/media/sponge.1a9e0694.png": "/static/media/sponge.1a9e0694.png",
     "static/media/strawberry.12a99143.png": "/static/media/strawberry.12a99143.png",
-    "static/media/toiletPaper.7b41c171.png": "/static/media/toiletPaper.7b41c171.png"
+    "static/media/toiletPaper.7b41c171.png": "/static/media/toiletPaper.7b41c171.png",
+    "static/media/yellowOnion.705db0c0.png": "/static/media/yellowOnion.705db0c0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.dc59ea8e.js",
     "static/js/2.4e65a630.chunk.js",
     "static/css/main.04cffc08.chunk.css",
-    "static/js/main.76217dd2.chunk.js"
+    "static/js/main.f5e51b26.chunk.js"
   ]
 }
