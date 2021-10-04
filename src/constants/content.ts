@@ -14,6 +14,8 @@ import pacifier from '../images/pacifier.png';
 import garlic from '../images/garlic.png';
 import shallot from '../images/shallot.png';
 import yellowOnion from '../images/yellowOnion.png';
+import redOnion from '../images/redOnion.png';
+import dishTowel from '../images/dishTowel.png';
 
 export interface NFTData {
   contractAddress: string;
@@ -111,25 +113,43 @@ const things = [
     picture: pacifier,
     name: 'Pacifier',
     price: 2.5,
-    token: '',
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978696806468943873',
   },
   {
     picture: garlic,
     name: 'Garlic',
     price: 0.5,
-    token: '',
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978697905980571649',
   },
   {
     picture: shallot,
     name: 'Shallot',
     price: 0.75,
-    token: '',
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978699005492199425',
   },
   {
     picture: yellowOnion,
     name: 'Yellow Onion',
     price: 1.49,
-    token: '',
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978700105003827201',
+  },
+  {
+    picture: dishTowel,
+    name: 'Dish Towel',
+    price: 4.99,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978701204515454977',
+  },
+  {
+    picture: redOnion,
+    name: 'Red Onion',
+    price: 1.49,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978702304027082753',
   },
 ];
 
