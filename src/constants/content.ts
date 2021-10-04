@@ -128,7 +128,7 @@ const things = [
   {
     picture: yellowOnion,
     name: 'Yellow Onion',
-    price: 2.5,
+    price: 1.49,
     token: '',
   },
 ];
