@@ -10,6 +10,7 @@ import Price from '../../components/Price';
 import NFT from '../../components/NFT';
 import {
   getPhotoSrc,
+  getPrefix,
   getPrice,
   getName,
   getNftData,
@@ -42,7 +43,7 @@ export default function Main({ match, location: { pathname } }: Props) {
           <PreloadedImage height={300} width={300} src={getPhotoSrc(id)} />
         </SharedElement>
       </div>
-      <Price usd={getPrice(id)} name={getName(id)} />
+      <Price usd={getPrice(id)} name={getName(id)} prefix={getPrefix(id)} />
       <NFT {...getNftData(id)} name={getName(id)} />
     </div>
   );

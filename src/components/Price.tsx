@@ -7,15 +7,16 @@ import Modal from './Modal';
 type Props = {
   usd: number;
   name: string;
+  prefix?: string;
 };
 
-export default function Price({ usd, name }: Props) {
+export default function Price({ usd, prefix = '', name }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [eth, setEth] = useState(0);
   useCrypto(usd, setEth, true);
 
   const priceString = eth ? `IRL: ${eth.toFixed(8)} ETH` : ` `;
-  const title = `Real Life Cost of ${name}`;
+  const title = `IRL Cost of ${prefix}${name}`;
 
   return (
     <>
@@ -27,7 +28,7 @@ export default function Price({ usd, name }: Props) {
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
       >
-        <div>${usd}</div>
+        <div className="Main__price_detail">${usd.toFixed(2)}</div>
       </Modal>
     </>
   );

@@ -37,6 +37,7 @@ const things = [
   {
     picture: banana,
     name: 'Banana',
+    prefix: 'a ',
     price: 0.39,
     token:
       '115520923340809203113026120233829107469855999749882535239359978684711841038337',
@@ -58,6 +59,7 @@ const things = [
   {
     picture: strawberry,
     name: 'Strawberry',
+    prefix: 'a ',
     price: 0.25,
     token:
       '115520923340809203113026120233829107469855999749882535239359978688010375921665',
@@ -72,6 +74,7 @@ const things = [
   {
     picture: sponge,
     name: 'Sponge',
+    prefix: 'a ',
     price: 0.93,
     token:
       '115520923340809203113026120233829107469855999749882535239359978690209399177217',
@@ -79,6 +82,7 @@ const things = [
   {
     picture: bowlingBall,
     name: 'Bowling Ball',
+    prefix: 'a ',
     price: 144.95,
     token:
       '115520923340809203113026120233829107469855999749882535239359978691308910804993',
@@ -86,6 +90,7 @@ const things = [
   {
     picture: candle,
     name: 'Candle',
+    prefix: 'a ',
     price: 7.8,
     token:
       '115520923340809203113026120233829107469855999749882535239359978692408422432769',
@@ -114,6 +119,7 @@ const things = [
   {
     picture: pacifier,
     name: 'Pacifier',
+    prefix: 'a ',
     price: 2.5,
     token:
       '115520923340809203113026120233829107469855999749882535239359978696806468943873',
@@ -128,6 +134,7 @@ const things = [
   {
     picture: shallot,
     name: 'Shallot',
+    prefix: 'a ',
     price: 0.75,
     token:
       '115520923340809203113026120233829107469855999749882535239359978699005492199425',
@@ -135,6 +142,7 @@ const things = [
   {
     picture: yellowOnion,
     name: 'Yellow Onion',
+    prefix: 'a ',
     price: 1.49,
     token:
       '115520923340809203113026120233829107469855999749882535239359978700105003827201',
@@ -142,6 +150,7 @@ const things = [
   {
     picture: dishTowel,
     name: 'Dish Towel',
+    prefix: 'a ',
     price: 4.99,
     token:
       '115520923340809203113026120233829107469855999749882535239359978701204515454977',
@@ -149,6 +158,7 @@ const things = [
   {
     picture: redOnion,
     name: 'Red Onion',
+    prefix: 'a ',
     price: 1.49,
     token:
       '115520923340809203113026120233829107469855999749882535239359978702304027082753',
@@ -156,6 +166,7 @@ const things = [
   {
     picture: crackers,
     name: 'Crackers',
+    prefix: 'a ',
     price: 6.9,
     token:
       '115520923340809203113026120233829107469855999749882535239359978703403538710529',
@@ -163,6 +174,7 @@ const things = [
   {
     picture: tomato,
     name: 'Tomato',
+    prefix: 'a ',
     price: 1.5,
     token:
       '115520923340809203113026120233829107469855999749882535239359978704503050338305',
@@ -197,6 +209,14 @@ export function getName(id?: string): string {
   }
 
   return things[parseInt(id, 10)]?.name;
+}
+
+export function getPrefix(id?: string): string | undefined {
+  if (typeof id === 'undefined') {
+    return things[getLatestPhotoId()]?.prefix;
+  }
+
+  return things[parseInt(id, 10)]?.prefix;
 }
 
 export function getNftData(id?: string): NFTData {

@@ -1,13 +1,13 @@
 .Modal__header {
   min-height: 20px;
   margin: -20px -20px 10px;
-  padding: 10px 40px;
+  padding: 10px 40px 0;
   font-weight: bold;
   position: relative;
 }
 
 .Modal__content {
-  margin: 0 -20px 0;
+  margin: 0 -20px -20px;
   padding: 20px;
 }
 
@@ -15,6 +15,8 @@
   position: absolute;
   top: 10px;
   left: 10px;
+  border-radius: 50%;
+  color: rgba(114, 114, 114, 0.95);
 }
 
 .Modal__title {
