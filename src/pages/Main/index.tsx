@@ -38,6 +38,9 @@ export default function Main({ match, location: { pathname } }: Props) {
         Main__transitioning: isTransitioning || activePathname !== pathname,
       })}
     >
+      <div className="Main__details">
+        <div className="Main__name">{getName(id)}</div>
+      </div>
       <div className="Main__marquee">
         <SharedElement id={`/thing/${id}`} pathname={pathname}>
           <PreloadedImage height={300} width={300} src={getPhotoSrc(id)} />

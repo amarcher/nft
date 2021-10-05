@@ -121,6 +121,7 @@ const things = [
     name: 'Pacifier',
     prefix: 'a ',
     price: 2.5,
+    description: 'This piece celebrates the birth of my son.',
     token:
       '115520923340809203113026120233829107469855999749882535239359978696806468943873',
   },
@@ -128,6 +129,8 @@ const things = [
     picture: garlic,
     name: 'Garlic',
     price: 0.5,
+    description:
+      'Some find its scent offensive. Others find it comforting. Those from Gilroy, CA can’t escape it.',
     token:
       '115520923340809203113026120233829107469855999749882535239359978697905980571649',
   },
@@ -136,6 +139,8 @@ const things = [
     name: 'Shallot',
     prefix: 'a ',
     price: 0.75,
+    description:
+      'Delicious raw in salad dressing or deep fried or pan simmered.',
     token:
       '115520923340809203113026120233829107469855999749882535239359978699005492199425',
   },
@@ -144,6 +149,7 @@ const things = [
     name: 'Yellow Onion',
     prefix: 'a ',
     price: 1.49,
+    description: 'One of the only vegetables I knew how to cook as a bachelor.',
     token:
       '115520923340809203113026120233829107469855999749882535239359978700105003827201',
   },
@@ -152,6 +158,7 @@ const things = [
     name: 'Dish Towel',
     prefix: 'a ',
     price: 4.99,
+    description: 'Good to have around to clean up inevitable messes.',
     token:
       '115520923340809203113026120233829107469855999749882535239359978701204515454977',
   },
@@ -160,6 +167,8 @@ const things = [
     name: 'Red Onion',
     prefix: 'a ',
     price: 1.49,
+    description:
+      'Though mild and sweet, it will still bring tears to your eyes.',
     token:
       '115520923340809203113026120233829107469855999749882535239359978702304027082753',
   },
@@ -168,6 +177,7 @@ const things = [
     name: 'Crackers',
     prefix: 'a ',
     price: 6.9,
+    description: 'Just add peanut butter.',
     token:
       '115520923340809203113026120233829107469855999749882535239359978703403538710529',
   },
@@ -217,6 +227,14 @@ export function getPrefix(id?: string): string | undefined {
   }
 
   return things[parseInt(id, 10)]?.prefix;
+}
+
+export function getDescription(id?: string): string | undefined {
+  if (typeof id === 'undefined') {
+    return things[getLatestPhotoId()]?.description;
+  }
+
+  return things[parseInt(id, 10)]?.description;
 }
 
 export function getNftData(id?: string): NFTData {
