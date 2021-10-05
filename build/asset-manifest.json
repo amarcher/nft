@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.04cffc08.chunk.css",
-    "main.js": "/static/js/main.717b1bf8.chunk.js",
-    "main.js.map": "/static/js/main.717b1bf8.chunk.js.map",
+    "main.js": "/static/js/main.eb109aec.chunk.js",
+    "main.js.map": "/static/js/main.eb109aec.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.dc59ea8e.js",
     "runtime-main.js.map": "/static/js/runtime-main.dc59ea8e.js.map",
     "static/js/2.4e65a630.chunk.js": "/static/js/2.4e65a630.chunk.js",
@@ -17,6 +17,7 @@
     "static/media/bowlingBall.ed590812.png": "/static/media/bowlingBall.ed590812.png",
     "static/media/brusselsSprouts.ebdde723.png": "/static/media/brusselsSprouts.ebdde723.png",
     "static/media/candle.d6a9bd27.png": "/static/media/candle.d6a9bd27.png",
+    "static/media/crackers.97e9da58.png": "/static/media/crackers.97e9da58.png",
     "static/media/dishTowel.3a935b4b.png": "/static/media/dishTowel.3a935b4b.png",
     "static/media/ductTape.e1be0eeb.png": "/static/media/ductTape.e1be0eeb.png",
     "static/media/eggs.344c6d60.png": "/static/media/eggs.344c6d60.png",
@@ -30,12 +31,13 @@
     "static/media/sponge.1a9e0694.png": "/static/media/sponge.1a9e0694.png",
     "static/media/strawberry.12a99143.png": "/static/media/strawberry.12a99143.png",
     "static/media/toiletPaper.7b41c171.png": "/static/media/toiletPaper.7b41c171.png",
+    "static/media/tomato.cbd55e77.png": "/static/media/tomato.cbd55e77.png",
     "static/media/yellowOnion.705db0c0.png": "/static/media/yellowOnion.705db0c0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.dc59ea8e.js",
     "static/js/2.4e65a630.chunk.js",
     "static/css/main.04cffc08.chunk.css",
-    "static/js/main.717b1bf8.chunk.js"
+    "static/js/main.eb109aec.chunk.js"
   ]
 }

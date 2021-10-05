@@ -16,6 +16,8 @@ import shallot from '../images/shallot.png';
 import yellowOnion from '../images/yellowOnion.png';
 import redOnion from '../images/redOnion.png';
 import dishTowel from '../images/dishTowel.png';
+import crackers from '../images/crackers.png';
+import tomato from '../images/tomato.png';
 
 export interface NFTData {
   contractAddress: string;
@@ -150,6 +152,20 @@ const things = [
     price: 1.49,
     token:
       '115520923340809203113026120233829107469855999749882535239359978702304027082753',
+  },
+  {
+    picture: crackers,
+    name: 'Crackers',
+    price: 6.9,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978703403538710529',
+  },
+  {
+    picture: tomato,
+    name: 'Tomato',
+    price: 1.5,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978704503050338305',
   },
 ];
 
