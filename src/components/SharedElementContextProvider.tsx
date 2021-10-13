@@ -79,11 +79,14 @@ function getKeyFrames(
   );
 }
 
+const TIMEOUT = 100;
+
 export default function ShareElementContextProvider({ children }: Props) {
   const { pathname } = useLocation();
   const ghostLayerRef = useRef<HTMLDivElement>(null);
   const prevPathname = useRef<string | undefined>(pathname);
   const activePathname = useRef<string | undefined>(pathname);
+  const timeout = useRef<ReturnType<typeof setTimeout> | undefined>();
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const [sharedElements, setSharedElements] = useState<
@@ -156,12 +159,37 @@ export default function ShareElementContextProvider({ children }: Props) {
           ...prevSharedElements,
           [id]: {
             firstBoundingClientRect: ref.getBoundingClientRect(),
+            node: ref,
             id,
           },
         };
       }),
     [attachElement]
   );
+
+  const onResize = useCallback(() => {
+    setSharedElements((prevSharedElements) => {
+      return Object.keys(prevSharedElements).reduce((sharedElements, id) => {
+        sharedElements[id] = {
+          ...prevSharedElements[id],
+          firstBoundingClientRect:
+            prevSharedElements[id].node?.getBoundingClientRect() ||
+            prevSharedElements[id].firstBoundingClientRect,
+        };
+        return sharedElements;
+      }, {} as Record<string, SharedElement>);
+    });
+  }, []);
+
+  const debouncedOnResize = useCallback(() => {
+    if (timeout.current) clearTimeout(timeout.current);
+    timeout.current = setTimeout(onResize, TIMEOUT);
+  }, [onResize]);
+
+  useEffect(() => {
+    window.addEventListener('resize', debouncedOnResize);
+    return () => window.removeEventListener('resize', debouncedOnResize);
+  }, [debouncedOnResize]);
 
   const endTransition = useCallback(() => {
     setSharedElements({});
