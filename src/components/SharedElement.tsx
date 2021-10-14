@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { SharedElementContext } from './SharedElementContextProvider';
+import React, { useEffect, useRef } from 'react';
+import useSharedElementContext from '../hooks/useSharedElementContext';
 
 import './SharedElement.css';
 
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function SharedElement({ children, id, pathname }: Props) {
-  const { mountSharedElement } = useContext(SharedElementContext);
+  const { mountSharedElement } = useSharedElementContext();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

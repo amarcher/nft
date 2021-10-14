@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { RouteComponentProps } from 'react-router';
 import classNames from 'classnames';
 
 import usePageTitle from '../../hooks/usePageTitle';
 import { photos } from '../../constants/content';
 import Button from '../../components/Button';
-import { SharedElementContext } from '../../components/SharedElementContextProvider';
+import useSharedElementContext from '../../hooks/useSharedElementContext';
 import PreloadedImage from '../../components/PreloadedImage';
 import SharedElement from '../../components/SharedElement';
 
@@ -24,7 +24,7 @@ export default function Things({
 }: Props) {
   usePageTitle('Things');
 
-  const { isTransitioning, activePathname } = useContext(SharedElementContext);
+  const { isTransitioning, activePathname } = useSharedElementContext();
 
   return (
     <div

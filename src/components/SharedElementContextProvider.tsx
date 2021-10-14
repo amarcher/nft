@@ -211,7 +211,7 @@ export default function ShareElementContextProvider({ children }: Props) {
       );
     }
 
-    console.log('did not transition: found no elements to transition');
+    console.log('Found no elements to transition');
     setIsTransitioning(false);
     return Promise.resolve().then(() => setIsTransitioning(false));
   }, [endTransition, sharedElements, runAnimation]);
@@ -263,11 +263,7 @@ export default function ShareElementContextProvider({ children }: Props) {
     <SharedElementContext.Provider
       value={{
         mountSharedElement,
-        isTransitioning:
-          isTransitioning ||
-          prevPathname.current !== pathname ||
-          activePathname.current !== pathname ||
-          prevPathname.current !== activePathname.current,
+        isTransitioning,
         activePathname: prevPathname.current,
       }}
     >
@@ -275,11 +271,7 @@ export default function ShareElementContextProvider({ children }: Props) {
         {children}
         <div
           className={classNames('GhostLayer__mask', {
-            GhostLayer__mask__transitioning:
-              prevPathname.current !== pathname ||
-              activePathname.current !== pathname ||
-              prevPathname.current !== activePathname.current ||
-              isTransitioning,
+            GhostLayer__mask__transitioning: isTransitioning,
           })}
         />
         <div className="GhostLayer" ref={ghostLayerRef} />

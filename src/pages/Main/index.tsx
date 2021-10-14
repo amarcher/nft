@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 import usePageTitle from '../../hooks/usePageTitle';
 import PreloadedImage from '../../components/PreloadedImage';
 import { RouteComponentProps } from 'react-router-dom';
 import SharedElement from '../../components/SharedElement';
-import { SharedElementContext } from '../../components/SharedElementContextProvider';
+import useSharedElementContext from '../../hooks/useSharedElementContext';
 import Price from '../../components/Price';
 import NFT from '../../components/NFT';
 import {
@@ -24,7 +24,7 @@ type Props = RouteComponentProps<{ id?: string }>;
 
 export default function Main({ match, location: { pathname } }: Props) {
   const { id = String(getLatestPhotoId()) } = match.params;
-  const { isTransitioning, activePathname } = useContext(SharedElementContext);
+  const { isTransitioning, activePathname } = useSharedElementContext();
 
   usePageTitle(getName(id));
 
