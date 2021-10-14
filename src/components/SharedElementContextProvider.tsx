@@ -167,7 +167,7 @@ export default function ShareElementContextProvider({ children }: Props) {
     [attachElement]
   );
 
-  const onResize = useCallback(() => {
+  const onResizeOrScroll = useCallback(() => {
     setSharedElements((prevSharedElements) => {
       return Object.keys(prevSharedElements).reduce((sharedElements, id) => {
         sharedElements[id] = {
@@ -181,15 +181,19 @@ export default function ShareElementContextProvider({ children }: Props) {
     });
   }, []);
 
-  const debouncedOnResize = useCallback(() => {
+  const debouncedOnResizeOrScroll = useCallback(() => {
     if (timeout.current) clearTimeout(timeout.current);
-    timeout.current = setTimeout(onResize, TIMEOUT);
-  }, [onResize]);
+    timeout.current = setTimeout(onResizeOrScroll, TIMEOUT);
+  }, [onResizeOrScroll]);
 
   useEffect(() => {
-    window.addEventListener('resize', debouncedOnResize);
-    return () => window.removeEventListener('resize', debouncedOnResize);
-  }, [debouncedOnResize]);
+    window.addEventListener('resize', debouncedOnResizeOrScroll);
+    document.addEventListener('scroll', debouncedOnResizeOrScroll);
+    return () => {
+      window.removeEventListener('resize', debouncedOnResizeOrScroll);
+      document.addEventListener('scroll', debouncedOnResizeOrScroll);
+    };
+  }, [debouncedOnResizeOrScroll]);
 
   const endTransition = useCallback(() => {
     setSharedElements({});
@@ -211,7 +215,7 @@ export default function ShareElementContextProvider({ children }: Props) {
       );
     }
 
-    console.log('did not transition: found no elements to transition');
+    console.log('Found no elements to transition');
     setIsTransitioning(false);
     return Promise.resolve().then(() => setIsTransitioning(false));
   }, [endTransition, sharedElements, runAnimation]);
@@ -263,11 +267,7 @@ export default function ShareElementContextProvider({ children }: Props) {
     <SharedElementContext.Provider
       value={{
         mountSharedElement,
-        isTransitioning:
-          isTransitioning ||
-          prevPathname.current !== pathname ||
-          activePathname.current !== pathname ||
-          prevPathname.current !== activePathname.current,
+        isTransitioning,
         activePathname: prevPathname.current,
       }}
     >
@@ -275,11 +275,7 @@ export default function ShareElementContextProvider({ children }: Props) {
         {children}
         <div
           className={classNames('GhostLayer__mask', {
-            GhostLayer__mask__transitioning:
-              prevPathname.current !== pathname ||
-              activePathname.current !== pathname ||
-              prevPathname.current !== activePathname.current ||
-              isTransitioning,
+            GhostLayer__mask__transitioning: isTransitioning,
           })}
         />
         <div className="GhostLayer" ref={ghostLayerRef} />
