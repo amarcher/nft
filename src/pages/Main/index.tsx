@@ -1,11 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
+import {
+  useSharedElementContext,
+  SharedElement,
+} from 'react-shared-element-transition';
 
 import usePageTitle from '../../hooks/usePageTitle';
 import PreloadedImage from '../../components/PreloadedImage';
 import { RouteComponentProps } from 'react-router-dom';
-import SharedElement from '../../components/SharedElement';
-import useSharedElementContext from '../../hooks/useSharedElementContext';
 import Price from '../../components/Price';
 import NFT from '../../components/NFT';
 import {
