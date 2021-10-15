@@ -10542,9 +10542,9 @@ react-scripts@4.0.1:
     fsevents "^2.1.3"
 
 react-shared-element-transition@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-shared-element-transition/-/react-shared-element-transition-1.0.0.tgz#804633931d8b94308d3ccc3fbee51f77a6229985"
-  integrity sha512-9NXhWlK9iNYW562+KAlQXFysg3pEaPa+d+ILcZTSxBLs6vXF9kTHZ3G4U4+M2OX+ocr4teSxnVsjju/StekFww==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-shared-element-transition/-/react-shared-element-transition-1.0.1.tgz#109164f177260257225d430a3827951437f48503"
+  integrity sha512-Uo/bvzUlveNb2f+Mr6Y4VAPQjco2tNR1t/CaA5PzbQ5NRuI4ugp6L/Yff46Dmn/nP85S0vRKAGTEPMYvhV7xVQ==
 
 react@^17.0.2:
   version "17.0.2"
