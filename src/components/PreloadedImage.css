@@ -47,7 +47,7 @@
   .preloaded-image__preloading
   .preloaded-image:not(.preloaded-image__video),
 .GhostLayer .SharedElement .preloaded-image__preloading .preloaded-image__img {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .preloaded-image__preloading .preloaded-image__cover {
@@ -58,7 +58,7 @@
   .SharedElement
   .preloaded-image__preloading
   .preloaded-image__cover {
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .preloaded-image__video {
