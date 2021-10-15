@@ -1,19 +1,22 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, StaticRouter, Route, Switch } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
-import SharedElementContextProvider from './components/SharedElementContextProvider';
+import { SharedElementContextProvider } from 'react-shared-element-transition';
 import Nav from './components/Nav';
 import Main from './pages/Main';
 import Things from './pages/Things';
 import NotFound from './pages/NotFound';
 
 function Routes() {
+  const { pathname } = useLocation();
+
   useEffect(() => {
     require('web-animations-js');
   }, []);
 
   return (
-    <SharedElementContextProvider>
+    <SharedElementContextProvider pathname={pathname}>
       <Switch>
         <Route exact path="/" component={Things} />
         <Route path="/things" component={Things} />

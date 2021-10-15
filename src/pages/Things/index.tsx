@@ -1,13 +1,15 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router';
 import classNames from 'classnames';
+import {
+  useSharedElementContext,
+  SharedElement,
+} from 'react-shared-element-transition';
 
 import usePageTitle from '../../hooks/usePageTitle';
 import { photos } from '../../constants/content';
 import Button from '../../components/Button';
-import useSharedElementContext from '../../hooks/useSharedElementContext';
 import PreloadedImage from '../../components/PreloadedImage';
-import SharedElement from '../../components/SharedElement';
 
 import './Things.css';
 
