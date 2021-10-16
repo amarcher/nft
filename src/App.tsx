@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, StaticRouter, Route, Switch } from 'react-router-dom';
 import { useLocation } from 'react-router';
 
@@ -10,10 +10,6 @@ import NotFound from './pages/NotFound';
 
 function Routes() {
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    require('web-animations-js');
-  }, []);
 
   return (
     <SharedElementContextProvider pathname={pathname}>

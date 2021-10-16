@@ -10541,10 +10541,12 @@ react-scripts@4.0.1:
   optionalDependencies:
     fsevents "^2.1.3"
 
-react-shared-element-transition@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-shared-element-transition/-/react-shared-element-transition-1.0.1.tgz#109164f177260257225d430a3827951437f48503"
-  integrity sha512-Uo/bvzUlveNb2f+Mr6Y4VAPQjco2tNR1t/CaA5PzbQ5NRuI4ugp6L/Yff46Dmn/nP85S0vRKAGTEPMYvhV7xVQ==
+react-shared-element-transition@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-shared-element-transition/-/react-shared-element-transition-2.0.0.tgz#452c60c06e10c3756ce3ecd623b9462efa5890ff"
+  integrity sha512-eM8JlUIg+180PDn78r84qO8pu7esaq5arxzyqYdnSjifnoseAFZVn4bvzXmiF8XCMb9uuCdhUGszsz6A5EP3TQ==
+  dependencies:
+    web-animations-js "^2.3.2"
 
 react@^17.0.2:
   version "17.0.2"
