@@ -18,6 +18,11 @@ import redOnion from '../images/redOnion.png';
 import dishTowel from '../images/dishTowel.png';
 import crackers from '../images/crackers.png';
 import tomato from '../images/tomato.png';
+import peach from '../images/peach.png';
+import coffeeBeans from '../images/coffeeBeans.png';
+import lemon from '../images/lemon.png';
+import orangeBellPepper from '../images/orangeBellPepper.png';
+import parmesan from '../images/parmesan.png';
 
 export interface NFTData {
   contractAddress: string;
@@ -188,6 +193,45 @@ const things = [
     price: 1.5,
     token:
       '115520923340809203113026120233829107469855999749882535239359978704503050338305',
+  },
+  {
+    picture: peach,
+    name: 'Peach',
+    prefix: 'a ',
+    price: 2.08,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978705602561966081',
+  },
+  {
+    picture: coffeeBeans,
+    name: 'Coffee Beans',
+    price: 0.85,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978706702073593857',
+  },
+  {
+    picture: lemon,
+    name: 'Lemon',
+    prefix: 'a ',
+    price: 0.25,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978707801585221633',
+  },
+  {
+    picture: orangeBellPepper,
+    name: 'Orange Bell Pepper',
+    prefix: 'an ',
+    price: 2.49,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978708901096849409',
+  },
+  {
+    picture: parmesan,
+    name: 'Parmesan Cheese',
+    prefix: '',
+    price: 9.0,
+    token:
+      '115520923340809203113026120233829107469855999749882535239359978710000608477185',
   },
 ];
 
