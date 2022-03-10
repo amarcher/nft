@@ -6,6 +6,7 @@
   "description": "Normal Fucking Things",
   "dependencies": {
     "@babel/core": "^7.14.3",
+    "@babel/helper-create-class-features-plugin": "^7.17.6",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
