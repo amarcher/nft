@@ -1,7 +1,9 @@
-// eslint-disable-next-line no-undef
-importScripts(
-  'https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js'
-);
+/// <reference lib="webworker" />
+import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
+import { registerRoute, NavigationRoute } from 'workbox-routing';
 
-// eslint-disable-next-line no-restricted-globals
-workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
+// eslint-disable-next-line
+precacheAndRoute(self.__WB_MANIFEST);
+const handler = createHandlerBoundToURL('/index.html');
+const navigationRoute = new NavigationRoute(handler);
+registerRoute(navigationRoute);
