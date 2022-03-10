@@ -28,7 +28,6 @@
     "canvas": "^2.8.0",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
-    "file-loader": "^6.2.0",
     "moment": "^2.29.1",
     "path": "^0.12.7",
     "postcss-normalize": "^10.0.1",
