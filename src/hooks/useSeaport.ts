@@ -7,7 +7,7 @@ const CRYPTO_ENDPOINT = 'https://api.opensea.io/api/v1/assets';
 
 function getAsset({ tokenId, contractAddress }: NFTData) {
   return get(
-    `${CRYPTO_ENDPOINT}?token_ids=${tokenId}&asset_contract_address=${contractAddress}`
+    `${CRYPTO_ENDPOINT}?token_ids=${tokenId}&asset_contract_address=${contractAddress}&include_orders=true`
   ).then((response) => {
     return response?.assets?.[0];
   });
