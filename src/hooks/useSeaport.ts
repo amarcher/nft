@@ -9,7 +9,11 @@ function getAsset({ tokenId, contractAddress }: NFTData) {
   return get(
     `${CRYPTO_ENDPOINT}?token_ids=${tokenId}&asset_contract_address=${contractAddress}&include_orders=true`
   ).then((response) => {
-    return response?.assets?.[0];
+    const asset = response?.assets?.[0];
+    return {
+      salePrice: asset?.seaport_sell_orders?.[0].current_price,
+      permalink: asset?.permalink,
+    };
   });
 }
 

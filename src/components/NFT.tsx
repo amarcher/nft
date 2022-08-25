@@ -18,7 +18,7 @@ export default function NFT({ contractAddress, tokenId, name }: Props) {
     return <div className="Main__NFT" />;
   }
 
-  const { base_price: salePrice } = (asset.sell_orders || [])[0] || {};
+  const { salePrice, permalink } = asset || {};
 
   const title = `NFT of ${name}`;
   const priceString = salePrice
@@ -31,7 +31,7 @@ export default function NFT({ contractAddress, tokenId, name }: Props) {
       <Button
         className="Main__NFT"
         onPress={salePrice ? undefined : () => setIsModalOpen(true)}
-        href={salePrice ? asset.permalink : undefined}
+        href={salePrice ? permalink : undefined}
       >
         {priceString}
       </Button>
@@ -40,7 +40,7 @@ export default function NFT({ contractAddress, tokenId, name }: Props) {
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
       >
-        <Button href={asset.permalink}>{buyButton}</Button>
+        <Button href={permalink}>{buyButton}</Button>
       </Modal>
     </>
   );

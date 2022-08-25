@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.59870d5d.css",
-    "main.js": "/static/js/main.7b64790c.js",
+    "main.js": "/static/js/main.c078816b.js",
     "static/js/320.e40764eb.chunk.js": "/static/js/320.e40764eb.chunk.js",
     "static/media/redOnion.png": "/static/media/redOnion.06e53a366a6410c2fb97.png",
     "static/media/brusselsSprouts.png": "/static/media/brusselsSprouts.88d0ee827912bbff783f.png",
@@ -32,11 +32,11 @@
     "static/media/logo.png": "/static/media/logo.c1374840416538787b5c.png",
     "index.html": "/index.html",
     "main.59870d5d.css.map": "/static/css/main.59870d5d.css.map",
-    "main.7b64790c.js.map": "/static/js/main.7b64790c.js.map",
+    "main.c078816b.js.map": "/static/js/main.c078816b.js.map",
     "320.e40764eb.chunk.js.map": "/static/js/320.e40764eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.59870d5d.css",
-    "static/js/main.7b64790c.js"
+    "static/js/main.c078816b.js"
   ]
 }
